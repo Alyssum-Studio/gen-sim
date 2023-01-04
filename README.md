@@ -1,4 +1,6 @@
-# default
+# GenSim
+
+A Genshin Impact damage simulator.
 
 ## Project setup
 
