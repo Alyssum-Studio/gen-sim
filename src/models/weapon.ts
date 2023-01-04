@@ -19,22 +19,17 @@ enum WeaponSecondStatType {
 }
 
 interface Weapon {
-  readonly name: string
-  readonly rarity: number
-  readonly type: WeaponType
-  readonly secondStatType: WeaponSecondStatType
+  readonly name: string;
+  readonly rarity: number;
+  readonly type: WeaponType;
+  readonly secondStatType: WeaponSecondStatType;
 
-  level: number
-  ascensionPhase: number
-  refinementRank: number
+  level: number;
+  ascensionPhase: number;
+  refinementRank: number;
 
-  get baseATK(): number
-  get secondStatValue(): number
+  get baseATK(): number;
+  get secondStatValue(): number;
 }
 
-
-export type {
-  WeaponType,
-  WeaponSecondStatType,
-  Weapon,
-}
+export type { WeaponType, WeaponSecondStatType, Weapon };

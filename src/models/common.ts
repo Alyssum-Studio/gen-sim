@@ -17,10 +17,7 @@ enum Region {
   Fontaine,
   Natlan,
   Snezhnaya,
-  "Khaenri'ah"
+  "Khaenri'ah",
 }
 
-export type {
-  ElementalType,
-  Region
-}
+export type { ElementalType, Region };

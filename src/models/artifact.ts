@@ -35,20 +35,20 @@ enum ArtifactSubStatType {
 }
 
 interface Artifact {
-  readonly set: string
-  readonly rarity: number
-  readonly type: ArtifactType
-  readonly mainStatType: ArtifactMainStatType
+  readonly set: string;
+  readonly rarity: number;
+  readonly type: ArtifactType;
+  readonly mainStatType: ArtifactMainStatType;
 
-  level: number
-  subStats: Record<ArtifactSubStatType, number>
+  level: number;
+  subStats: Record<ArtifactSubStatType, number>;
 
-  get mainStatValue(): number
+  get mainStatValue(): number;
 }
 
 export type {
   ArtifactType,
   ArtifactMainStatType,
   ArtifactSubStatType,
-  Artifact
-}
+  Artifact,
+};
