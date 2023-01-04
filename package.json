@@ -8,27 +8,31 @@
     "lint": "eslint . --fix --ignore-path .gitignore"
   },
   "dependencies": {
-    "@mdi/font": "7.0.96",
-    "echarts": "^5.4.1",
+    "vue": "^3.2.38",
+    "vue-router": "^4.0.0",
     "pinia": "^2.0.23",
     "pug": "^3.0.2",
-    "roboto-fontface": "*",
-    "vue": "^3.2.38",
-    "vue-echarts": "^6.5.0",
-    "vue-router": "^4.0.0",
     "vuetify": "^3.0.0",
-    "webfontloader": "^1.0.0"
+    "roboto-fontface": "*",
+    "webfontloader": "^1.0.0",
+    "@mdi/font": "7.0.96",
+    "echarts": "^5.4.1",
+    "vue-echarts": "^6.5.0"
   },
   "devDependencies": {
+    "vite": "^3.0.9",
+    "@vitejs/plugin-vue": "^3.0.3",
+    "vite-plugin-vuetify": "^1.0.0-alpha.12",
+    "typescript": "^4.0.0",
     "@types/node": "^18.11.9",
     "@types/webfontloader": "^1.6.35",
-    "@vitejs/plugin-vue": "^3.0.3",
-    "@vue/eslint-config-typescript": "^11.0.0",
+    "vue-tsc": "^1.0.9",
     "eslint": "^8.22.0",
     "eslint-plugin-vue": "^9.3.0",
-    "typescript": "^4.0.0",
-    "vite": "^3.0.9",
-    "vite-plugin-vuetify": "^1.0.0-alpha.12",
-    "vue-tsc": "^1.0.9"
+    "eslint-plugin-vue-pug": "^0.5.5",
+    "@vue/eslint-config-standard": "^8.0.1",
+    "@vue/eslint-config-typescript": "^11.0.0",
+    "prettier": "^2.8.1",
+    "@vue/eslint-config-prettier": "^7.0.0"
   }
 }
