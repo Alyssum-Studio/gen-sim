@@ -10,10 +10,13 @@ import vuetify from "./vuetify";
 import pinia from "../store";
 import router from "../router";
 
+// Components
+import VChart from "vue-echarts";
+
 // Types
 import type { App } from "vue";
 
 export function registerPlugins(app: App) {
   loadFonts();
-  app.use(vuetify).use(router).use(pinia);
+  app.use(vuetify).use(router).use(pinia).component("VChart", VChart);
 }
