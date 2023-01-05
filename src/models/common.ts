@@ -1,4 +1,4 @@
-enum ElementalType {
+export enum ElementalType {
   Pyro,
   Hydro,
   Dendro,
@@ -9,7 +9,7 @@ enum ElementalType {
   Physical,
 }
 
-enum Region {
+export enum Region {
   Mondstadt,
   Liyue,
   Inazuma,
@@ -20,7 +20,7 @@ enum Region {
   "Khaenri'ah",
 }
 
-enum StatType {
+export enum StatType {
   HP,
   HPPercent,
   ATK,
@@ -55,5 +55,3 @@ enum StatType {
   PhysicalRES,
   ElementalDMGBonus,
 }
-
-export type { ElementalType, Region, StatType };
