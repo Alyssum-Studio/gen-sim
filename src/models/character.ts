@@ -1,25 +1,6 @@
-import { ElementalType, Region } from "@/models/common";
+import { ElementalType, Region, StatType } from "@/models/common";
 import { Artifact } from "@/models/artifact";
 import { Weapon, WeaponType } from "@/models/weapon";
-
-enum AscensionStatType {
-  HP,
-  ATK,
-  DEF,
-  ElementalMastery,
-  CRITRate,
-  CRITDMG,
-  HealingBonus,
-  EnergyRecharge,
-  PyroDamageBonus,
-  HydroDamageBonus,
-  DendroDamageBonus,
-  ElectroDamageBonus,
-  AnemoDamageBonus,
-  CryoDamageBonus,
-  GeoDamageBonus,
-  PhysicalDamageBonus,
-}
 
 interface NormalAttack {
   readonly name: string;
@@ -73,7 +54,7 @@ interface Character {
   readonly region: Region;
   readonly releaseDate: Date;
 
-  readonly ascensionStatType: AscensionStatType;
+  readonly ascensionStatType: StatType;
   readonly constellations: Array<Constellation>;
   readonly normalAttack: NormalAttack;
   readonly elementalSkill: ElementalSkill;
@@ -128,7 +109,6 @@ interface Party {
 }
 
 export type {
-  AscensionStatType,
   NormalAttack,
   ElementalSkill,
   ElementalBurst,

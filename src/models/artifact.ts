@@ -1,3 +1,5 @@
+import { StatType } from "@/models/common";
+
 enum ArtifactType {
   FlowerOfLife,
   PlumeOfDeath,
@@ -6,49 +8,16 @@ enum ArtifactType {
   CircletOfLogos,
 }
 
-enum ArtifactMainStatType {
-  HP,
-  ATK,
-  ElementalMastery,
-  HPPercent,
-  ATKPercent,
-  DEFPercent,
-  CRITRate,
-  CRITDMG,
-  HealingBonus,
-  EnergyRecharge,
-  ElementalDMGBonus,
-  PhysicalDMGBonus,
-}
-
-enum ArtifactSubStatType {
-  HP,
-  ATK,
-  DEF,
-  HPPercent,
-  ATKPercent,
-  DEFPercent,
-  ElementalMastery,
-  EnergyRecharge,
-  CRITRate,
-  CRITDMG,
-}
-
 interface Artifact {
   readonly set: string;
   readonly rarity: number;
   readonly type: ArtifactType;
-  readonly mainStatType: ArtifactMainStatType;
+  readonly mainStatType: StatType;
 
   level: number;
-  subStats: Record<ArtifactSubStatType, number>;
+  subStats: Record<StatType, number>;
 
   get mainStatValue(): number;
 }
 
-export type {
-  ArtifactType,
-  ArtifactMainStatType,
-  ArtifactSubStatType,
-  Artifact,
-};
+export type { ArtifactType, Artifact };

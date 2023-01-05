@@ -1,3 +1,5 @@
+import { StatType } from "@/models/common";
+
 enum WeaponType {
   Sword,
   Claymore,
@@ -6,23 +8,11 @@ enum WeaponType {
   bow,
 }
 
-enum WeaponSecondStatType {
-  None,
-  HP,
-  ATK,
-  DEF,
-  ElementalMastery,
-  CRITRate,
-  CRITDMG,
-  EnergyRecharge,
-  PhysicalDamageBonus,
-}
-
 interface Weapon {
   readonly name: string;
   readonly rarity: number;
   readonly type: WeaponType;
-  readonly secondStatType: WeaponSecondStatType;
+  readonly secondStatType: StatType | null;
 
   level: number;
   ascensionPhase: number;
@@ -32,4 +22,4 @@ interface Weapon {
   get secondStatValue(): number;
 }
 
-export type { WeaponType, WeaponSecondStatType, Weapon };
+export type { WeaponType, Weapon };
