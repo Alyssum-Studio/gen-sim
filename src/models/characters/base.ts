@@ -2,6 +2,13 @@ import { ElementalType, Region, StatType } from "@/models/common";
 import { Artifact } from "@/models/artifacts";
 import { Weapon, WeaponType } from "@/models/weapons";
 
+export type CharacterRarity = 4 | 5;
+
+export const CharacterStatRatio = {
+  4: 0.08257,
+  5: 0.08692,
+};
+
 export abstract class AscensionPassive {
   abstract readonly name: string;
 }
@@ -51,16 +58,16 @@ export abstract class ElementalBurst {
 
 export abstract class Character {
   abstract readonly name: string;
-  abstract readonly rarity: number;
+  abstract readonly rarity: CharacterRarity;
   abstract readonly vision: ElementalType;
   abstract readonly weaponType: WeaponType;
   abstract readonly region: Region;
   abstract readonly releaseDate: Date;
-  abstract readonly ascensionPassives: AscensionPassive[];
-  abstract readonly constellations: Constellation[];
   readonly normalAttack: NormalAttack;
   readonly elementalSkill: ElementalSkill;
   readonly elementalBurst: ElementalBurst;
+  abstract readonly ascensionPassives: AscensionPassive[];
+  abstract readonly constellations: Constellation[];
 
   level: number;
   ascensionPhase: number;
@@ -75,20 +82,23 @@ export abstract class Character {
     return 0; // TODO: implement
   }
 
-  protected abstract readonly ATKRatio: number;
-  get characterATK(): number {
-    return Math.ceil(
-      (this.level +
-        ([5, 9, 12, 16, 19, 22, 25][this.ascensionPhase] * 19) / 9) *
-        this.ATKRatio
+  protected abstract readonly baseATK: number;
+  get levelATK(): number {
+    return (
+      this.baseATK * (1 + (this.level - 1) * CharacterStatRatio[this.rarity])
     );
   }
-  get baseATK(): number {
-    const weaponATK = this.weapon ? this.weapon.ATK : 0;
-    return this.characterATK + weaponATK;
+  get ascensionATK(): number {
+    return (
+      (this.baseATK * [0, 38, 65, 101, 128, 155, 182][this.ascensionPhase]) /
+      50.8654
+    );
+  }
+  get characterATK(): number {
+    return Math.floor(this.levelATK + this.ascensionATK);
   }
   get ATK(): number {
-    return 0; // TODO: implement
+    return this.characterATK; // TODO: implement
   }
 
   get baseDEF(): number {
