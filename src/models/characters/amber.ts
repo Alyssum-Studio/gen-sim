@@ -7,43 +7,42 @@ import {
   NormalAttack,
 } from "@/models/characters/base";
 import { ElementalType, Region, StatType } from "@/models/common";
-import { Weapon, WeaponType } from "@/models/weapons";
-import { Artifact } from "@/models/artifacts";
+import { WeaponType } from "@/models/weapons";
 
 class EveryArrowFindsItsTarget extends AscensionPassive {
-  readonly name: string = "Every Arrow Finds Its Target";
+  readonly name = "Every Arrow Finds Its Target";
 }
 
 class PreciseShot extends AscensionPassive {
-  readonly name: string = "Precise Shot";
+  readonly name = "Precise Shot";
 }
 
 class OneArrowToRuleThemAll extends Constellation {
-  readonly name: string = "One Arrow to Rule Them All";
+  readonly name = "One Arrow to Rule Them All";
 }
 
 class BunnyTriggered extends Constellation {
-  readonly name: string = "Bunny Triggered";
+  readonly name = "Bunny Triggered";
 }
 
 class ItBurns extends Constellation {
-  readonly name: string = "It Burns!";
+  readonly name = "It Burns!";
 }
 
 class ItsNotJustAnyDoll extends Constellation {
-  readonly name: string = "It's Not Just Any Doll...";
+  readonly name = "It's Not Just Any Doll...";
 }
 
 class ItsBaronBunny extends Constellation {
-  readonly name: string = "It's Baron Bunny!";
+  readonly name = "It's Baron Bunny!";
 }
 
 class Wildfire extends Constellation {
-  readonly name: string = "Wildfire";
+  readonly name = "Wildfire";
 }
 
 class Sharpshooter extends NormalAttack {
-  readonly name: string = "Sharpshooter";
+  readonly name = "Sharpshooter";
 
   get DMG(): number[] {
     return [];
@@ -71,7 +70,7 @@ class Sharpshooter extends NormalAttack {
 }
 
 class ExplosivePuppet extends ElementalSkill {
-  readonly name: string = "Explosive Puppet";
+  readonly name = "Explosive Puppet";
   readonly pressCoolDown: number = 15;
   readonly holdCoolDown: number = 15;
 
@@ -81,7 +80,7 @@ class ExplosivePuppet extends ElementalSkill {
 }
 
 class FieryRain extends ElementalBurst {
-  readonly name: string = "Fiery Rain";
+  readonly name = "Fiery Rain";
 
   get CD(): number {
     return 0;
@@ -97,20 +96,16 @@ class FieryRain extends ElementalBurst {
 }
 
 export class Amber extends Character {
-  readonly name: string = "Amber";
-  readonly rarity: number = 4;
-  readonly vision: ElementalType = ElementalType.Pyro;
-  readonly weaponType: WeaponType = WeaponType.Bow;
-  readonly region: Region = Region.Mondstadt;
-  readonly releaseDate: Date = new Date(2022, 9, 28);
-
-  readonly ATKRatio: number = 1.556;
-  readonly ascensionStatType: StatType = StatType.ATKPercent;
-  readonly ascensionPassives: AscensionPassive[] = [
-    EveryArrowFindsItsTarget,
-    PreciseShot,
-  ];
-  readonly constellations: Constellation[] = [
+  readonly name = "Amber";
+  readonly rarity = 4;
+  readonly vision = ElementalType.Pyro;
+  readonly weaponType = WeaponType.Bow;
+  readonly region = Region.Mondstadt;
+  readonly releaseDate = new Date(2020, 9, 28);
+  readonly baseATK = 18.6984;
+  readonly ascensionStatType = StatType.ATKPercent;
+  readonly ascensionPassives = [EveryArrowFindsItsTarget, PreciseShot];
+  readonly constellations = [
     OneArrowToRuleThemAll,
     BunnyTriggered,
     ItBurns,
@@ -126,8 +121,8 @@ export class Amber extends Character {
     normalAttackLevel = 11,
     elementalSkillLevel = 11,
     elementalBurstLevel = 11,
-    weapon: Weapon | null = null,
-    artifacts: Artifact[] = []
+    weapon = null,
+    artifacts = []
   ) {
     super(
       level,

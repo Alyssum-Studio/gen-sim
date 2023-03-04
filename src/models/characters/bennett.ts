@@ -7,43 +7,42 @@ import {
   NormalAttack,
 } from "./base";
 import { ElementalType, Region, StatType } from "@/models/common";
-import { Weapon, WeaponType } from "@/models/weapons";
-import { Artifact } from "@/models/artifacts";
+import { WeaponType } from "@/models/weapons";
 
 class Rekindle extends AscensionPassive {
-  readonly name: string = "Rekindle";
+  readonly name = "Rekindle";
 }
 
 class Fearnaught extends AscensionPassive {
-  readonly name: string = "Fearnaught";
+  readonly name = "Fearnaught";
 }
 
 class GrandExpectation extends Constellation {
-  readonly name: string = "Grand Expectation";
+  readonly name = "Grand Expectation";
 }
 
 class ImpasseConqueror extends Constellation {
-  readonly name: string = "Impasse Conquer";
+  readonly name = "Impasse Conquer";
 }
 
 class UnstoppableFervor extends Constellation {
-  readonly name: string = "Unstoppable Fervor";
+  readonly name = "Unstoppable Fervor";
 }
 
 class UnexpectedOdyssey extends Constellation {
-  readonly name: string = "Unexpected Odyssey";
+  readonly name = "Unexpected Odyssey";
 }
 
 class TrueExplorer extends Constellation {
-  readonly name: string = "True Explorer";
+  readonly name = "True Explorer";
 }
 
 class FireVenturesWithMe extends Constellation {
-  readonly name: string = "Fire Ventures With Me";
+  readonly name = "Fire Ventures With Me";
 }
 
 class StrikeOfFortune extends NormalAttack {
-  readonly name: string = "Strike of Fortune";
+  readonly name = "Strike of Fortune";
 
   get DMG(): number[] {
     return [];
@@ -71,9 +70,9 @@ class StrikeOfFortune extends NormalAttack {
 }
 
 class PassionOverload extends ElementalSkill {
-  readonly name: string = "Passion Overload";
-  readonly pressCoolDown: number = 5;
-  get holdCoolDown(): number {
+  readonly name = "Passion Overload";
+  readonly pressCoolDown = 5;
+  get holdCoolDown() {
     return 7.5 || 10; // TODO: implement
   }
 
@@ -83,7 +82,7 @@ class PassionOverload extends ElementalSkill {
 }
 
 class FantasticVoyage extends ElementalBurst {
-  readonly name: string = "Fantastic Voyage";
+  readonly name = "Fantastic Voyage";
 
   get CD(): number {
     return 0;
@@ -99,17 +98,16 @@ class FantasticVoyage extends ElementalBurst {
 }
 
 export class Bennett extends Character {
-  readonly name: string = "Bennett";
-  readonly rarity: number = 4;
-  readonly vision: ElementalType = ElementalType.Pyro;
-  readonly weaponType: WeaponType = WeaponType.Sword;
-  readonly region: Region = Region.Mondstadt;
-  readonly releaseDate: Date = new Date(2020, 9, 28);
-
-  readonly ATKRatio: number = 1.334;
-  readonly ascensionStatType: StatType = StatType.EnergyRecharge;
-  readonly ascensionPassives: AscensionPassive[] = [Rekindle, Fearnaught];
-  readonly constellations: Constellation[] = [
+  readonly name = "Bennett";
+  readonly rarity = 4;
+  readonly vision = ElementalType.Pyro;
+  readonly weaponType = WeaponType.Sword;
+  readonly region = Region.Mondstadt;
+  readonly releaseDate = new Date(2020, 9, 28);
+  readonly baseATK = 16.0272;
+  readonly ascensionStatType = StatType.EnergyRecharge;
+  readonly ascensionPassives = [Rekindle, Fearnaught];
+  readonly constellations = [
     GrandExpectation,
     ImpasseConqueror,
     UnstoppableFervor,
@@ -117,7 +115,6 @@ export class Bennett extends Character {
     TrueExplorer,
     FireVenturesWithMe,
   ];
-
   constructor(
     level = 90,
     ascensionPhase = 6,
@@ -125,8 +122,8 @@ export class Bennett extends Character {
     normalAttackLevel = 11,
     elementalSkillLevel = 11,
     elementalBurstLevel = 11,
-    weapon: Weapon | null = null,
-    artifacts: Artifact[] = []
+    weapon = null,
+    artifacts = []
   ) {
     super(
       level,
