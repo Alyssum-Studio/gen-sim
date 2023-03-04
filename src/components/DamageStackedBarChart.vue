@@ -34,11 +34,11 @@ const option = ref({
   },
   yAxis: {
     type: "category",
-    data: ["角色1", "角色2", "角色3", "角色4"],
+    data: ["Char 4", "Char 3", "Char 2", "Char 1"],
   },
   series: [
     {
-      name: "物理",
+      name: "Physical",
       type: "bar",
       stack: "total",
       label: {
@@ -47,10 +47,10 @@ const option = ref({
       emphasis: {
         focus: "series",
       },
-      data: [320, 302, 301, 334],
+      data: [50, 50, 0, 100],
     },
     {
-      name: "Mail Ad",
+      name: "Pyro",
       type: "bar",
       stack: "total",
       label: {
@@ -59,10 +59,10 @@ const option = ref({
       emphasis: {
         focus: "series",
       },
-      data: [120, 132, 101, 134, 90, 230, 210],
+      data: [0, 100, 200, 300],
     },
     {
-      name: "Affiliate Ad",
+      name: "Dendro",
       type: "bar",
       stack: "total",
       label: {
@@ -71,7 +71,7 @@ const option = ref({
       emphasis: {
         focus: "series",
       },
-      data: [220, 182, 191, 234, 290, 330, 310],
+      data: [200, 0, 0, 0],
     },
   ],
 });

@@ -1,12 +1,23 @@
 <template lang="pug">
-v-card(title="關卡設定")
+v-card(title="Stage")
   v-card-text
-    v-form
-      v-select(label="敵人")
-      v-select(label="環境")
-      v-text-field(label="操作")
+    v-list
+      v-list-item(
+        v-for="e in stage.enemies"
+        :key="e"
+        :title="e.name"
+        )
 </template>
 
-<script lang="ts" setup></script>
+<script lang="ts" setup>
+const stage = {
+  enemies: [
+    { name: "Enemy 1" },
+    { name: "Enemy 2" },
+    { name: "Enemy 3" },
+    { name: "Enemy 4" },
+  ],
+};
+</script>
 
 <style scoped></style>

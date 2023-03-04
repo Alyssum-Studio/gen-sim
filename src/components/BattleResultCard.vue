@@ -1,5 +1,5 @@
 <template lang="pug">
-v-card
+v-card(title="Battle Result")
   v-container(fluid)
     v-row
       v-col
@@ -8,15 +8,28 @@ v-card
       v-col
         v-row
           v-col DPS:
+          v-col
+            span.text-h2 100
         v-row
-          v-col 時間推估:
+          v-col End Time:
+          v-col
+            span.text-h2 0:10
+        v-row
+          v-col Max Damage:
+          v-col
+            span.text-h2 300
       v-col
         DamageStackedBarChart
 </template>
 
-<script lang="ts" setup>
+<script>
+import { defineComponent } from "vue";
 import DamageTimeline from "@/components/DamageTimeline.vue";
 import DamageStackedBarChart from "@/components/DamageStackedBarChart.vue";
+
+export default defineComponent({
+  components: { DamageStackedBarChart, DamageTimeline },
+});
 </script>
 
 <style scoped></style>

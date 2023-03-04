@@ -2,20 +2,25 @@
 v-container
   v-row
     v-col
-      PartyEditor(v-model:party="party")
+      PartyEditor
     v-col
       StageEditor
   v-row
     v-col
-      StageResultCard
+      BattleEditor
+  v-row
+    v-col
+      BattleResultCard
 </template>
 
 <script lang="ts" setup>
+import { defineComponent } from "vue";
 import PartyEditor from "@/components/PartyEditor.vue";
 import StageEditor from "@/components/StageEditor.vue";
-import StageResultCard from "@/components/StageResultCard.vue";
-import { Bennett, Party } from "@/models/characters";
-import { Amber } from "@/models/characters/amber";
+import BattleEditor from "@/components/BattleEditor.vue";
+import BattleResultCard from "@/components/BattleResultCard.vue";
 
-const party = new Party([new Amber(), new Bennett()]);
+defineComponent({
+  components: { BattleResultCard, BattleEditor, StageEditor, PartyEditor },
+});
 </script>

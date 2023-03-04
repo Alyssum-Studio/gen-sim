@@ -1,16 +1,23 @@
 <template lang="pug">
-v-card(title="隊伍設定")
+v-card(title="Party")
   v-card-text
     v-list
-      v-list-item(v-for="c in props.party.characters" :key="c" :title="c.name")
+      v-list-item(
+        v-for="c in party.characters"
+        :key="c"
+        :title="c.name"
+      )
 </template>
 
 <script lang="ts" setup>
-import { Party } from "@/models/characters";
-
-const props = defineProps({
-  party: Party,
-});
+const party = {
+  characters: [
+    { name: "Char 1" },
+    { name: "Char 2" },
+    { name: "Char 3" },
+    { name: "Char 4" },
+  ],
+};
 </script>
 
 <style scoped></style>

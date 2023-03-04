@@ -19,12 +19,12 @@ const option = ref({
   },
   series: [
     {
-      name: "元素附著",
+      name: "Element",
       type: "line",
       data: [0.8, 0, 0.4],
     },
     {
-      name: "傷害",
+      name: "Damage",
       type: "bar",
       data: [1000, 500, 1200],
     },
