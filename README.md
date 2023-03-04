@@ -2,11 +2,11 @@
 
 A Genshin Impact battle simulator.
 
-All game info is referenced from [Genshin Impact Wiki](https://genshin-impact.fandom.com/wiki/Genshin_Impact_Wiki).
+---
 
-All art resources come from Genshin Impact official and Genshin Impact Wiki.
+All game info and art resources com from [Genshin Impact](https://genshin.hoyoverse.com/) and [Genshin Impact Wiki](https://genshin-impact.fandom.com/wiki/Genshin_Impact_Wiki).
 
-If there is any infringement problem, please contact me, and I will deal with it as soon as possible.
+If there is any infringement problem, please contact me and I will deal with it as soon as possible.
 
 ## Project setup
 
